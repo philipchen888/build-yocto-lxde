@@ -6,7 +6,7 @@ require recipes-kernel/linux/linux-yocto.inc
 DEPENDS += " openssl-native"
 
 SRC_URI = " \
-	git:///home/philip/build-yocto-lxde/rk3328/kernel.git;branch=master; \
+	git:///home/philip/build-yocto-lxde/rk3328/kernel.git;protocol=file;branch=master; \
 "
 
 SRCREV = "${AUTOREV}"

@@ -81,7 +81,7 @@ MACHINE_FEATURES += "apm usbhost keyboard vfat ext2 screen touchscreen alsa blue
 # Raspberry Pi has no hardware clock
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-MACHINE_EXTRA_RRECOMMENDS += "kernel-modules udev-rules-rpi"
+MACHINE_EXTRA_RRECOMMENDS += "kernel-modules udev-rules-rpi resize-helper"
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_I2C', '1', 'kernel-module-i2c-dev kernel-module-i2c-bcm2708', '', d)}"
 MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS += "${@oe.utils.conditional('ENABLE_IR', '1', 'kernel-module-gpio-ir kernel-module-gpio-ir-tx', '', d)}"
 
@@ -92,7 +92,7 @@ SERIAL_CONSOLES_CHECK ??= "${SERIAL_CONSOLES}"
 BOOTFILES_DIR_NAME ?= "bootfiles"
 
 # Set Raspberrypi splash image
-SPLASH = "psplash-raspberrypi"
+# SPLASH = "psplash-raspberrypi"
 
 def make_dtb_boot_files(d):
     # Generate IMAGE_BOOT_FILES entries for device tree files listed in

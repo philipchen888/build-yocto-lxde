@@ -15,11 +15,6 @@ GPTIMG = "${IMAGE_BASENAME}-${MACHINE}-gpt.img"
 BOOT_IMG = "${IMAGE_BASENAME}-${MACHINE}-boot.img"
 IDBLOADER = "idbloader.img"
 
-# Get From rk-binary loader
-# DDR_BIN = "rk-binary/ddr.bin"
-# LOADER_BIN = "rk-binary/loader.bin"
-# MINILOADER_BIN = "rk-binary/miniloader.bin"
-# Not from rk-binary
 UBOOT_IMG = "u-boot.img"
 
 # default partitions [in Sectors]

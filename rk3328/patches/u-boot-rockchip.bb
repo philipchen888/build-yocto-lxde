@@ -20,6 +20,8 @@ B = "${WORKDIR}/build"
 # u-boot will build native python module
 inherit python3native python3-dir
 
+do_deploy[depends] += " linux-rockchip:do_deploy"
+
 do_configure () {
     if [ -z "${UBOOT_CONFIG}" ]; then
         if [ -n "${UBOOT_MACHINE}" ]; then
@@ -45,14 +47,8 @@ do_compile_append () {
 	fi
 }
 
-do_compile_append () {
-        cp -a ${B}/tools/mkimage ${DEPLOY_DIR_IMAGE}
-}
-
 SRC_URI = " \
 	git://github.com/u-boot/u-boot.git;protocol=https;branch=u-boot-2023.07.y; \
 	file://modify.patch; \
-	git://github.com/JeffyCN/mirrors.git;protocol=https;branch=rkbin;name=rkbin;destsuffix=rkbin; \
 "
 SRCREV = "${AUTOREV}"
-SRCREV_rkbin = "104659686b734ab041ef958c0abece1a250f48a4"
